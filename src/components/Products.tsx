@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { products } from "../data/products";
 
 export default function Products() {
-  const featured = products.slice(0, 3);
+  const featured = products.slice(0, 6);
 
   return (
     <section id="products" className="py-20 sm:py-28 bg-[#fafbff]">
@@ -17,8 +17,8 @@ export default function Products() {
           </h2>
           <p className="mt-4 text-slate-600 text-base sm:text-lg leading-relaxed">
             نحن الموزّع المعتمد لأبرز العلامات التجارية في عالم العزل ومواد
-            البناء — من الولايات المتحدة وفرنسا، إضافة إلى منتجاتنا المحلية بجودة
-            عالية.
+            البناء — من الولايات المتحدة وألمانيا وفرنسا، إضافة إلى منتجاتنا
+            المحلية بجودة عالية.
           </p>
         </div>
 
@@ -26,6 +26,10 @@ export default function Products() {
           {[
             "Tremco 🇺🇸",
             "Weber — Saint-Gobain 🇫🇷",
+            "MC-Bauchemie 🇩🇪",
+            "Dependable Depot 🇺🇸",
+            "Graco 🇺🇸",
+            "KPI 🇰🇼",
             "MatteX",
             "SABIC LDPE",
             "Sky Galaxy 🇸🇦",

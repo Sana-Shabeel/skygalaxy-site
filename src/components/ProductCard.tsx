@@ -70,6 +70,11 @@ export default function ProductCard({ product: p, reverse = false }: Props) {
           <div className="flex flex-wrap items-center gap-2 text-xs">
             <span className="font-bold text-brand-700">{p.brand}</span>
             {p.brandAr && <span className="text-slate-400">— {p.brandAr}</span>}
+            {p.kind === "equipment" && (
+              <span className="ms-auto px-2.5 py-1 rounded-full bg-amber-100 text-amber-800 text-[11px] font-bold">
+                معدّات احترافية
+              </span>
+            )}
           </div>
           <h3 className="mt-2 text-xl sm:text-2xl lg:text-3xl font-black text-brand-950 leading-tight">
             {p.nameAr}
