@@ -1,6 +1,10 @@
 import { useState } from "react";
-import { Mail, MapPin, Phone, Send } from "lucide-react";
-import { MAIN_WHATSAPP } from "../data/branches";
+import { Globe, Mail, MapPin, Phone, Send } from "lucide-react";
+import {
+  COMPANY_EMAIL,
+  COMPANY_WEBSITE,
+  MAIN_WHATSAPP,
+} from "../data/branches";
 
 export default function Contact() {
   const [form, setForm] = useState({ name: "", phone: "", message: "" });
@@ -65,9 +69,45 @@ export default function Contact() {
                 </div>
               </div>
             </div>
-            <div className="flex items-center gap-4 p-4 rounded-xl bg-white/5 border border-white/10">
+            <a
+              href={`mailto:${COMPANY_EMAIL}`}
+              className="flex items-center gap-4 p-4 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors"
+            >
               <div className="w-12 h-12 rounded-xl bg-brand-500/20 flex items-center justify-center">
                 <Mail className="text-brand-300" />
+              </div>
+              <div>
+                <div className="text-xs text-brand-200">البريد الإلكتروني</div>
+                <div
+                  dir="ltr"
+                  className="text-base font-semibold tracking-wide"
+                >
+                  {COMPANY_EMAIL}
+                </div>
+              </div>
+            </a>
+            <a
+              href={`https://${COMPANY_WEBSITE}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-4 p-4 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors"
+            >
+              <div className="w-12 h-12 rounded-xl bg-brand-500/20 flex items-center justify-center">
+                <Globe className="text-brand-300" />
+              </div>
+              <div>
+                <div className="text-xs text-brand-200">الموقع الإلكتروني</div>
+                <div
+                  dir="ltr"
+                  className="text-base font-semibold tracking-wide"
+                >
+                  {COMPANY_WEBSITE}
+                </div>
+              </div>
+            </a>
+            <div className="flex items-center gap-4 p-4 rounded-xl bg-white/5 border border-white/10">
+              <div className="w-12 h-12 rounded-xl bg-brand-500/20 flex items-center justify-center">
+                <Phone className="text-brand-300" />
               </div>
               <div>
                 <div className="text-xs text-brand-200">ساعات العمل</div>

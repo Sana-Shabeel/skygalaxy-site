@@ -83,6 +83,8 @@ export const branches: Branch[] = [
 ];
 
 // The "main" WhatsApp number used in the floating button + footer
-export const MAIN_WHATSAPP = "0555944852";
+export const MAIN_WHATSAPP = "0598909991";
+export const COMPANY_EMAIL = "info@skygalaxyco.com";
+export const COMPANY_WEBSITE = "www.skygalaxy.shop";
 
 export const WORKING_HOURS = "من 6 صباحاً حتى 7 مساءً — يومياً";

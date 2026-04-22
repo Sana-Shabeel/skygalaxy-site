@@ -1,5 +1,10 @@
-import { Phone } from "lucide-react";
-import { MAIN_WHATSAPP, branches } from "../data/branches";
+import { Globe, Mail, Phone } from "lucide-react";
+import {
+  COMPANY_EMAIL,
+  COMPANY_WEBSITE,
+  MAIN_WHATSAPP,
+  branches,
+} from "../data/branches";
 
 export default function Footer() {
   return (
@@ -66,13 +71,29 @@ export default function Footer() {
                 </a>
               </li>
             ))}
-            <li className="pt-3 mt-3 border-t border-white/10">
+            <li className="pt-3 mt-3 border-t border-white/10 space-y-2">
               <a
                 href={`tel:${MAIN_WHATSAPP}`}
-                className="inline-flex items-center gap-2 text-white font-bold"
+                className="flex items-center gap-2 text-white font-bold"
               >
                 <Phone size={16} />
                 <span dir="ltr">{MAIN_WHATSAPP}</span>
+              </a>
+              <a
+                href={`mailto:${COMPANY_EMAIL}`}
+                className="flex items-center gap-2 text-brand-200 hover:text-white transition-colors"
+              >
+                <Mail size={16} />
+                <span dir="ltr">{COMPANY_EMAIL}</span>
+              </a>
+              <a
+                href={`https://${COMPANY_WEBSITE}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-brand-200 hover:text-white transition-colors"
+              >
+                <Globe size={16} />
+                <span dir="ltr">{COMPANY_WEBSITE}</span>
               </a>
             </li>
           </ul>
