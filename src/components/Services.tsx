@@ -25,9 +25,9 @@ const services: Service[] = [
     bullets: [
       "حقن MC-Injekt 2111SA الألماني",
       "حقن DDi 1510 الأمريكي عالي الضغط",
-      "ضمان على جودة التنفيذ",
+      "تنفيذ بمضخات SME 500-2 احترافية",
     ],
-    image: "/assets/products/product-9.jpeg",
+    image: "/assets/products/product-29.jpeg",
     accent: "from-rose-500 to-red-700",
   },
   {
