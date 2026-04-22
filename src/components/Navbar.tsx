@@ -10,8 +10,10 @@ type LinkItem = {
 
 const navLinks: LinkItem[] = [
   { label: "الرئيسية", to: "/" },
+  { label: "من نحن", to: "#about" },
   { label: "كتالوج المنتجات", to: "/products" },
   { label: "خدماتنا", to: "#services" },
+  { label: "الاعتمادات", to: "#trust" },
   { label: "فروعنا", to: "#locations" },
   { label: "تواصل معنا", to: "#contact" },
 ];

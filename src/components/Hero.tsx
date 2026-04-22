@@ -1,4 +1,4 @@
-import { ArrowLeft, MapPin, Phone, Sparkles } from "lucide-react";
+import { ArrowLeft, Download, MapPin, Phone, Sparkles } from "lucide-react";
 import { Link } from "react-router-dom";
 import { MAIN_WHATSAPP } from "../data/branches";
 
@@ -59,6 +59,15 @@ export default function Hero() {
           >
             <Phone size={20} />
             اتصل بنا
+          </a>
+          <a
+            href="/sky-galaxy-company-profile.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-emerald-500/20 backdrop-blur border border-emerald-300/40 text-white font-bold hover:bg-emerald-500/30 transition-colors"
+          >
+            <Download size={20} />
+            ملف تعريف الشركة (PDF)
           </a>
         </div>
 
