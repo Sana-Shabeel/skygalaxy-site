@@ -1,18 +1,49 @@
 import { useEffect, useMemo, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { ArrowRight, Search, SlidersHorizontal, X } from "lucide-react";
+import {
+  ArrowRight,
+  Building2,
+  Search,
+  SlidersHorizontal,
+  X,
+} from "lucide-react";
 import ProductCard from "../components/ProductCard";
 import { products, searchableText } from "../data/products";
+
+/**
+ * Short, friendly Arabic label for each brand chip.
+ * Anything not in the map falls back to its raw `brand` value.
+ */
+const BRAND_LABELS: Record<string, string> = {
+  "Tremco Commercial Sealants & Waterproofing": "Tremco",
+  "Weber (Saint-Gobain)": "Weber",
+  "KPI (Kuwait Polyurethane Industry)": "KPI",
+  "Sky Galaxy (SME Series)": "Sky Galaxy",
+};
+
+const brandLabel = (b: string) => BRAND_LABELS[b] ?? b;
 
 export default function ProductsPage() {
   const [query, setQuery] = useState("");
   const [activeCategory, setActiveCategory] = useState<string>("الكل");
+  const [activeBrand, setActiveBrand] = useState<string>("الكل");
   const location = useLocation();
 
   // Categories derived from data
   const categories = useMemo(() => {
     const set = new Set(products.map((p) => p.category));
     return ["الكل", ...Array.from(set)];
+  }, []);
+
+  // Brands derived from data — sorted by product count (most popular first)
+  const brands = useMemo(() => {
+    const counts = new Map<string, number>();
+    for (const p of products)
+      counts.set(p.brand, (counts.get(p.brand) ?? 0) + 1);
+    const sorted = Array.from(counts.entries())
+      .sort((a, b) => b[1] - a[1])
+      .map(([brand]) => brand);
+    return ["الكل", ...sorted];
   }, []);
 
   // Filter
@@ -22,10 +53,12 @@ export default function ProductsPage() {
       const matchesCategory =
         activeCategory === "الكل" || p.category === activeCategory;
       if (!matchesCategory) return false;
+      const matchesBrand = activeBrand === "الكل" || p.brand === activeBrand;
+      if (!matchesBrand) return false;
       if (!q) return true;
       return searchableText(p).includes(q);
     });
-  }, [query, activeCategory]);
+  }, [query, activeCategory, activeBrand]);
 
   // Scroll to hash if present (e.g. /products#tremproof-201)
   useEffect(() => {
@@ -93,8 +126,37 @@ export default function ProductsPage() {
       {/* Filters + results */}
       <section className="py-10 sm:py-14">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Category chips */}
+          {/* Brand chips */}
           <div className="flex items-center gap-3 flex-wrap">
+            <div className="flex items-center gap-2 text-slate-500 text-sm font-bold">
+              <Building2 size={16} />
+              الماركة:
+            </div>
+            {brands.map((b) => {
+              const active = b === activeBrand;
+              const count =
+                b === "الكل"
+                  ? products.length
+                  : products.filter((p) => p.brand === b).length;
+              return (
+                <button
+                  key={b}
+                  onClick={() => setActiveBrand(b)}
+                  className={`px-4 py-1.5 rounded-full text-sm font-bold transition-all ${
+                    active
+                      ? "bg-brand-950 text-white shadow-md shadow-brand-950/30"
+                      : "bg-white border border-slate-200 text-slate-700 hover:border-brand-400 hover:text-brand-700"
+                  }`}
+                >
+                  {brandLabel(b)}
+                  <span className="ms-2 text-xs opacity-70">({count})</span>
+                </button>
+              );
+            })}
+          </div>
+
+          {/* Category chips */}
+          <div className="mt-4 flex items-center gap-3 flex-wrap">
             <div className="flex items-center gap-2 text-slate-500 text-sm font-bold">
               <SlidersHorizontal size={16} />
               التصنيف:
@@ -136,11 +198,12 @@ export default function ProductsPage() {
                 "لا توجد نتائج مطابقة"
               )}
             </p>
-            {(query || activeCategory !== "الكل") && (
+            {(query || activeCategory !== "الكل" || activeBrand !== "الكل") && (
               <button
                 onClick={() => {
                   setQuery("");
                   setActiveCategory("الكل");
+                  setActiveBrand("الكل");
                 }}
                 className="text-sm font-semibold text-brand-700 hover:text-brand-900"
               >

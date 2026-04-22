@@ -17,7 +17,7 @@ export default function Hero() {
       <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-20 text-center w-full">
         <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur border border-white/20 text-xs sm:text-sm font-semibold text-white">
           <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-          مفتوحون الآن — 7 فروع في المملكة
+          مفتوحون الآن — 10 فروع في المملكة
         </span>
 
         <h1 className="mt-6 text-4xl sm:text-5xl lg:text-7xl font-black leading-[1.1] text-white animate-fade-up">
@@ -65,7 +65,7 @@ export default function Hero() {
         {/* Stats */}
         <div className="mt-14 grid grid-cols-3 gap-4 sm:gap-10 max-w-2xl mx-auto">
           {[
-            { n: "+7", l: "فروع" },
+            { n: "+10", l: "فروع" },
             { n: "+10", l: "سنوات خبرة" },
             { n: "24/7", l: "دعم العملاء" },
           ].map((s) => (

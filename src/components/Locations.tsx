@@ -2,7 +2,14 @@ import { useMemo, useState } from "react";
 import { Clock, MapPin, Navigation, Phone } from "lucide-react";
 import { branches, WORKING_HOURS } from "../data/branches";
 
-const cities = ["الكل", "الرياض", "جدة", "مكة المكرمة"];
+const cities = [
+  "الكل",
+  "الرياض",
+  "جدة",
+  "مكة المكرمة",
+  "الدمام",
+  "المدينة المنورة",
+];
 
 export default function Locations() {
   const [filter, setFilter] = useState<string>("الكل");
@@ -24,7 +31,7 @@ export default function Locations() {
             فروعنا
           </span>
           <h2 className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-black text-brand-950">
-            نخدمكم من 7 فروع في المملكة
+            نخدمكم من {branches.length} فروع في المملكة
           </h2>
           <p className="mt-4 text-slate-600 text-base sm:text-lg leading-relaxed">
             تفضّل بزيارتنا في أقرب فرع إليك، أو تواصل معنا مباشرةً عبر الهاتف.
