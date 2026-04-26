@@ -9,7 +9,7 @@ import {
   Wallet,
   type LucideIcon,
 } from "lucide-react";
-import { COMPANY, DEPARTMENTS, LEADERSHIP_ROLES } from "../data/company";
+import { DEPARTMENTS, LEADERSHIP_ROLES } from "../data/company";
 
 const ROLE_ICONS: LucideIcon[] = [Crown, Briefcase, Briefcase, Briefcase];
 
@@ -39,27 +39,6 @@ export default function Leadership() {
           </p>
         </div>
 
-        {/* Founder card */}
-        <div className="mt-12 max-w-3xl mx-auto bg-gradient-to-br from-brand-900 via-brand-800 to-brand-700 text-white rounded-3xl p-8 sm:p-10 shadow-xl shadow-brand-900/20 relative overflow-hidden">
-          <div className="absolute -top-10 -end-10 w-64 h-64 bg-cyan-400/20 rounded-full blur-3xl" />
-          <div className="relative flex items-center gap-5">
-            <div className="shrink-0 w-20 h-20 rounded-2xl bg-white/10 backdrop-blur border border-white/20 flex items-center justify-center">
-              <Crown size={36} className="text-amber-300" />
-            </div>
-            <div>
-              <div className="text-amber-300 text-xs sm:text-sm font-bold tracking-wide">
-                {COMPANY.founder.title}
-              </div>
-              <div className="mt-1 text-2xl sm:text-3xl font-black">
-                {COMPANY.founder.nameAr}
-              </div>
-              <div className="text-sm text-brand-200" dir="ltr">
-                {COMPANY.founder.nameEn}
-              </div>
-            </div>
-          </div>
-        </div>
-
         {/* Leadership roles */}
         <div className="mt-10">
           <h3 className="text-lg font-black text-brand-950 mb-4">
@@ -73,7 +52,7 @@ export default function Leadership() {
                   key={r.en}
                   className="bg-white rounded-2xl p-5 border border-slate-200/70 shadow-sm hover:shadow-lg hover:border-brand-300 transition-all"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-brand-500 to-brand-700 text-white flex items-center justify-center shadow-md shadow-brand-600/30">
+                  <div className="w-12 h-12 rounded-xl bg-linear-to-br from-brand-500 to-brand-700 text-white flex items-center justify-center shadow-md shadow-brand-600/30">
                     <Icon size={22} />
                   </div>
                   <h4 className="mt-4 text-base font-black text-brand-950">

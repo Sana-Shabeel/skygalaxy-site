@@ -5,11 +5,11 @@ export default function About() {
   return (
     <section
       id="about"
-      className="relative py-20 sm:py-28 bg-gradient-to-b from-white via-brand-50/40 to-white overflow-hidden"
+      className="relative py-20 sm:py-28 bg-linear-to-b from-white via-brand-50/40 to-white overflow-hidden"
     >
       {/* Decorative blobs */}
-      <div className="absolute top-20 -end-20 w-72 h-72 bg-brand-200/40 rounded-full blur-3xl" />
-      <div className="absolute bottom-10 -start-20 w-72 h-72 bg-cyan-200/40 rounded-full blur-3xl" />
+      <div className="absolute top-20 -inset-e-20 w-72 h-72 bg-brand-200/40 rounded-full blur-3xl" />
+      <div className="absolute bottom-10 -inset-s-20 w-72 h-72 bg-cyan-200/40 rounded-full blur-3xl" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto">
@@ -45,7 +45,7 @@ export default function About() {
         {/* Vision / Mission cards */}
         <div className="mt-14 grid md:grid-cols-2 gap-6">
           <article className="group relative bg-white rounded-3xl p-8 border border-slate-200/70 shadow-sm hover:shadow-xl transition-all">
-            <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-brand-500 to-brand-700 text-white flex items-center justify-center shadow-lg shadow-brand-600/30">
+            <div className="w-14 h-14 rounded-2xl bg-linear-to-br from-brand-500 to-brand-700 text-white flex items-center justify-center shadow-lg shadow-brand-600/30">
               <Eye size={26} />
             </div>
             <h3 className="mt-5 text-2xl font-black text-brand-950">رؤيتنا</h3>
@@ -55,7 +55,7 @@ export default function About() {
           </article>
 
           <article className="group relative bg-white rounded-3xl p-8 border border-slate-200/70 shadow-sm hover:shadow-xl transition-all">
-            <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-cyan-500 to-teal-700 text-white flex items-center justify-center shadow-lg shadow-cyan-600/30">
+            <div className="w-14 h-14 rounded-2xl bg-linear-to-br from-cyan-500 to-teal-700 text-white flex items-center justify-center shadow-lg shadow-cyan-600/30">
               <Target size={26} />
             </div>
             <h3 className="mt-5 text-2xl font-black text-brand-950">رسالتنا</h3>
@@ -66,9 +66,9 @@ export default function About() {
         </div>
 
         {/* Vision 2030 banner */}
-        <div className="mt-8 relative overflow-hidden rounded-3xl bg-gradient-to-br from-brand-900 via-brand-800 to-brand-700 text-white p-8 sm:p-10">
-          <div className="absolute -top-10 -end-10 w-72 h-72 bg-cyan-400/20 rounded-full blur-3xl" />
-          <div className="absolute -bottom-10 -start-10 w-72 h-72 bg-emerald-400/20 rounded-full blur-3xl" />
+        <div className="mt-8 relative overflow-hidden rounded-3xl bg-linear-to-br from-brand-900 via-brand-800 to-brand-700 text-white p-8 sm:p-10">
+          <div className="absolute -top-10 -inset-e-10 w-72 h-72 bg-cyan-400/20 rounded-full blur-3xl" />
+          <div className="absolute -bottom-10 -inset-s-10 w-72 h-72 bg-emerald-400/20 rounded-full blur-3xl" />
           <div className="relative flex flex-col md:flex-row md:items-center gap-6">
             <div className="shrink-0 w-16 h-16 rounded-2xl bg-white/10 backdrop-blur border border-white/20 flex items-center justify-center">
               <Award size={32} className="text-emerald-300" />

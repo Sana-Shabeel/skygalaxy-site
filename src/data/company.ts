@@ -13,11 +13,6 @@ export const COMPANY = {
   taglineAr: "قوة رائدة للابتكار والجودة في عالم حلول العزل المتكاملة",
   taglineEn:
     "A leading force for innovation and quality in the world of integrated insulation solutions.",
-  founder: {
-    nameAr: "خالد حسين الرائس",
-    nameEn: "Khaled Hussein Al-Raess",
-    title: "المالك والمؤسس",
-  },
   hq: "الرياض، المملكة العربية السعودية",
   vision: {
     ar: "أن نصبح الشركة الرائدة والأكثر انتشاراً في السوق السعودي، من خلال تأسيس شبكة فروع متكاملة تغطي كافة أنحاء المملكة، بالتوازي مع توسيع حضورنا الرقمي الفاعل.",
@@ -32,7 +27,7 @@ export const COMPANY = {
     en: "We are steadily moving towards achieving our long-term plan, fully aligned with the national transformation process and the ambitious Saudi Vision 2030.",
   },
   stats: {
-    employees: 26,
+    employees: 300,
     saudiEmployees: 8,
     capitalSar: 27_000_000,
     branches: 10,
