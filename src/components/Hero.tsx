@@ -8,13 +8,25 @@ export default function Hero() {
       id="home"
       className="relative min-h-[100svh] flex items-center overflow-hidden bg-gradient-to-br from-brand-950 via-brand-900 to-brand-700"
     >
-      {/* Star background */}
-      <div className="absolute inset-0 starfield opacity-60" />
+      {/* Video Banner */}
+      <video
+        className="absolute inset-0 w-full h-full object-cover z-0"
+        src="/assets/videos/banner-video.mp4"
+        autoPlay
+        loop
+        muted
+        playsInline
+        poster="/assets/logo.jpeg"
+      />
+      {/* Overlay for darkening video and keeping content readable */}
+      <div className="absolute inset-0 bg-brand-950/60 z-10" />
+      {/* Star background (optional, can be removed if video is visually busy) */}
+      {/* <div className="absolute inset-0 starfield opacity-60 z-20" /> */}
       {/* Glowing accents */}
-      <div className="absolute -top-32 -end-32 w-96 h-96 bg-brand-400/30 rounded-full blur-3xl" />
-      <div className="absolute -bottom-40 -start-20 w-[28rem] h-[28rem] bg-cyan-400/20 rounded-full blur-3xl" />
+      <div className="absolute -top-32 -inset-e-32 w-96 h-96 bg-brand-400/30 rounded-full blur-3xl z-20" />
+      <div className="absolute -bottom-40 -inset-s-20 w-md h-112 bg-cyan-400/20 rounded-full blur-3xl z-20" />
 
-      <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-20 text-center w-full">
+      <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-20 text-center w-full z-30">
         <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur border border-white/20 text-xs sm:text-sm font-semibold text-white">
           <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
           مفتوحون الآن — 10 فروع في المملكة
@@ -91,7 +103,7 @@ export default function Hero() {
       </div>
 
       {/* bottom curve */}
-      <div className="absolute bottom-0 inset-x-0 h-12 bg-gradient-to-b from-transparent to-[#fafbff]" />
+      <div className="absolute bottom-0 inset-x-0 h-12 bg-linear-to-b from-transparent to-[#fafbff] z-40" />
     </section>
   );
 }
