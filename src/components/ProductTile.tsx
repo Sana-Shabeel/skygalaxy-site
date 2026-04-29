@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import type { Product } from "../data/products";
-import BuyButton from "./BuyButton";
+import AddToCartButton from "./AddToCartButton";
+import Price from "./Price";
 
 type Props = {
   product: Product;
@@ -67,13 +68,18 @@ export default function ProductTile({ product: p }: Props) {
           {p.description}
         </p>
 
+        {/* Price */}
+        <div className="mt-3">
+          <Price product={p} />
+        </div>
+
         {/* Footer */}
         <div className="mt-auto pt-4 flex items-center justify-between gap-2">
           <span className="inline-flex items-center gap-1.5 text-sm font-bold text-brand-700 group-hover:gap-2.5 transition-all">
             التفاصيل
             <ArrowLeft size={16} />
           </span>
-          <BuyButton product={p} variant="compact" />
+          <AddToCartButton product={p} variant="compact" />
         </div>
       </div>
     </Link>

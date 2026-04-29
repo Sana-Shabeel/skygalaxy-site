@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { Menu, Sparkles, X } from "lucide-react";
+import CartButton from "./CartButton";
 
 type LinkItem = {
   label: string;
@@ -130,18 +131,24 @@ export default function Navbar() {
               اطلب عرض سعر
             </a>
           </li>
+          <li>
+            <CartButton solid={solid} />
+          </li>
         </ul>
 
         {/* Mobile toggle */}
-        <button
-          onClick={() => setOpen((o) => !o)}
-          className={`md:hidden p-2 rounded-lg ${
-            solid ? "text-brand-900" : "text-white"
-          }`}
-          aria-label="القائمة"
-        >
-          {open ? <X size={26} /> : <Menu size={26} />}
-        </button>
+        <div className="md:hidden flex items-center gap-1">
+          <CartButton solid={solid} />
+          <button
+            onClick={() => setOpen((o) => !o)}
+            className={`p-2 rounded-lg ${
+              solid ? "text-brand-900" : "text-white"
+            }`}
+            aria-label="القائمة"
+          >
+            {open ? <X size={26} /> : <Menu size={26} />}
+          </button>
+        </div>
       </nav>
 
       {/* Mobile menu */}

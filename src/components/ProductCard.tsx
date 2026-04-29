@@ -1,5 +1,7 @@
 import type { Product } from "../data/products";
 import BuyButton from "./BuyButton";
+import AddToCartButton from "./AddToCartButton";
+import Price from "./Price";
 
 type Props = {
   product: Product;
@@ -141,11 +143,22 @@ export default function ProductCard({ product: p, reverse = false }: Props) {
           )}
 
           {/* Buy / inquire CTA */}
-          <div className="mt-6 pt-5 border-t border-slate-100 flex flex-wrap items-center gap-3">
-            <BuyButton product={p} />
-            <span className="text-xs text-slate-500 font-semibold">
+          <div className="mt-6 pt-5 border-t border-slate-100 space-y-3">
+            <div className="flex flex-wrap items-end justify-between gap-3">
+              <Price product={p} size="lg" />
+              {p.priceSar != null && (
+                <span className="text-xs font-semibold text-emerald-700 bg-emerald-50 border border-emerald-200 rounded-full px-2.5 py-1">
+                  متوفر للطلب الفوري
+                </span>
+              )}
+            </div>
+            <div className="flex flex-wrap items-center gap-3">
+              <AddToCartButton product={p} />
+              <BuyButton product={p} variant="ghost" />
+            </div>
+            <p className="text-xs text-slate-500 font-semibold">
               توصيل لجميع مناطق المملكة • فاتورة ضريبية
-            </span>
+            </p>
           </div>
         </div>
       </div>

@@ -32,6 +32,13 @@ export type Product = {
   images: string[];
   /** Free-text Arabic & English keywords used by the search input */
   keywords: string[];
+  /**
+   * Optional public price in SAR (incl. VAT). When omitted the product is
+   * sold via "request a quote" — no online checkout is offered.
+   */
+  priceSar?: number;
+  /** Optional unit label shown next to the price, e.g. "للعبوة" or "للمتر". */
+  unitAr?: string;
 };
 
 export const products: Product[] = [
@@ -76,6 +83,8 @@ export const products: Product[] = [
       "تريمكو",
       "تريمبروف",
     ],
+    priceSar: 685,
+    unitAr: "للعبوة 18.9 لتر",
   },
   {
     id: "geomatt-nps-xl",
