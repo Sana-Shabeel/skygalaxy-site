@@ -7,7 +7,7 @@ import {
   SlidersHorizontal,
   X,
 } from "lucide-react";
-import ProductCard from "../components/ProductCard";
+import ProductTile from "../components/ProductTile";
 import { products, searchableText } from "../data/products";
 
 /**
@@ -214,9 +214,9 @@ export default function ProductsPage() {
 
           {/* Results */}
           {results.length > 0 ? (
-            <div className="mt-8 space-y-10">
-              {results.map((p, idx) => (
-                <ProductCard key={p.id} product={p} reverse={idx % 2 === 1} />
+            <div className="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 sm:gap-6">
+              {results.map((p) => (
+                <ProductTile key={p.id} product={p} />
               ))}
             </div>
           ) : (

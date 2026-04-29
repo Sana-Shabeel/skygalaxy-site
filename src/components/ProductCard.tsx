@@ -1,4 +1,5 @@
 import type { Product } from "../data/products";
+import BuyButton from "./BuyButton";
 
 type Props = {
   product: Product;
@@ -138,6 +139,14 @@ export default function ProductCard({ product: p, reverse = false }: Props) {
               </div>
             </div>
           )}
+
+          {/* Buy / inquire CTA */}
+          <div className="mt-6 pt-5 border-t border-slate-100 flex flex-wrap items-center gap-3">
+            <BuyButton product={p} />
+            <span className="text-xs text-slate-500 font-semibold">
+              توصيل لجميع مناطق المملكة • فاتورة ضريبية
+            </span>
+          </div>
         </div>
       </div>
     </article>
